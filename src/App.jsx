@@ -1,9 +1,13 @@
-// App.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Loader2, Sun, Moon, Menu, Plus, Settings, MessageSquare, Bot } from 'lucide-react';
-import { Alert, AlertDescription } from './components/ui/Alert';
 
-const ChatInterface = () => {
+const AlertMessage = ({ children }) => (
+  <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700" role="alert">
+    <p>{children}</p>
+  </div>
+);
+
+const App = () => {
   const [messages, setMessages] = useState([]);
   const [conversations, setConversations] = useState([
     { id: 1, title: 'Nova conversa', active: true }
@@ -191,11 +195,7 @@ const ChatInterface = () => {
               </div>
             </div>
           )}
-          {error && (
-            <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
+          {error && <AlertMessage>{error}</AlertMessage>}
           <div ref={messagesEndRef} />
         </div>
 
@@ -224,4 +224,4 @@ const ChatInterface = () => {
   );
 };
 
-export default ChatInterface;
+export default App;
