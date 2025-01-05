@@ -1,7 +1,7 @@
-// src/App.jsx
+// App.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Loader2, Sun, Moon, Menu, Plus, Settings, MessageSquare, Bot } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Alert, AlertDescription } from './components/ui/Alert';
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([]);
